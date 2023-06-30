@@ -11,7 +11,7 @@ pipeline {
       agent {
           docker {
             image 'python:3.8-slim-buster'
-            args '-u 0:0 -v /tmp:/root/.cache'
+            args '-u 0:0 -v /tmp:/sonqphu/.cache'
           }
       }
       steps {
@@ -37,8 +37,8 @@ pipeline {
         }
 
         //clean to save disk
-        sh "docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}"
-        sh "docker image rm ${DOCKER_IMAGE}:latest"
+        // sh "docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}"
+        // sh "docker image rm ${DOCKER_IMAGE}:latest"
       }
     }
   }
