@@ -22,7 +22,7 @@ pipeline {
     //}
 
     stage("build") {
-      // /agent { node {label 'master'}}
+      agent { node {label 'master'}}
       environment {
         DOCKER_TAG = "123"
       }
