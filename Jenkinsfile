@@ -24,7 +24,7 @@ pipeline {
     stage("build") {
       // /agent { node {label 'master'}}
       environment {
-        DOCKER_TAG="123"
+        DOCKER_TAG = "123"
       }
       steps {
         sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} . "
