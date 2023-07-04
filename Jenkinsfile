@@ -1,6 +1,6 @@
 pipeline {
 
-  agent none
+  // agent none
 
   environment {
     DOCKER_IMAGE = "sonqphu/flask-docker"
@@ -22,7 +22,7 @@ pipeline {
     // }
 
     stage("build") {
-      agent { node {label 'node1'}}
+      // agent { node {label 'node1'}}
       environment {
         DOCKER_TAG = "123"
       }
