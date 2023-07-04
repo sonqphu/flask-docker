@@ -24,7 +24,7 @@ pipeline {
     stage("build") {
       // agent { node {label 'node1'}}
       environment {
-        DOCKER_TAG = "123"
+        DOCKER_TAG="${GIT_BRANCH.tokenize('/').pop()}-${GIT_COMMIT.substring(0,7)}"
       }
       steps {
         sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} . "
